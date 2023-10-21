@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 
+import 'package:siska_flutter/ui_screens/state_management/coba.dart';
+
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
@@ -19,6 +21,7 @@ class MyHomePage extends StatelessWidget {
           )
         ],
       ),
+      body: Coba(),
     );
   }
 }
