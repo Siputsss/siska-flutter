@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
@@ -21,10 +20,23 @@ class Coba extends ReactiveStatelessWidget {
               count.state.toString(),
               textScaleFactor: 3,
             ),
-            Text(
-              Random().nextInt(100).toString(),
-              textScaleFactor: 3,
+            OnReactive(
+              () => Text(
+                count.state.toString(),
+                textScaleFactor: 3,
+              ),
             ),
+            OnBuilder(
+              listenTo: count,
+              builder: () => Text(
+                count.state.toString(),
+                textScaleFactor: 3,
+              ),
+            ),
+            // Text(
+            //   Random().nextInt(100).toString(),
+            //   textScaleFactor: 3,
+            // ),
             ElevatedButton(
               onPressed: () {
                 count.state = count.state + 1;
